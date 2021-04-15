@@ -10,8 +10,9 @@ const theme = extendTheme({
   fonts: { body: "Source sans pro", heading: "Raleway" },
   colors: {
     brand: {
+      50: "#0f101fe6",
       100: "#000115",
-      200: "#080A21",
+      200: "#0B0D26",
       300: "#134D4B",
       400: "#399996",
       500: "#62CBC7",
@@ -23,6 +24,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
+        minH: "100vh",
         bg: "brand.100",
         color: "white",
       },
