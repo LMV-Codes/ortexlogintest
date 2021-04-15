@@ -1,7 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Flex } from "@chakra-ui/layout";
-import { background } from "@chakra-ui/styled-system";
 import React from "react";
 import { Link } from "react-router-dom";
 import ortexLogo from "../../images/ortexL.png";
@@ -24,7 +23,7 @@ export const Navbar: React.FC = () => {
           color="white"
           marginRight="1em"
           _hover={{
-            color: "brand.600",
+            color: "brand.700",
             bg: "brand.300",
             borderColor: "brand.600",
           }}
