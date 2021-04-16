@@ -4,7 +4,7 @@ import React from "react";
 import useWebSocket from "react-use-websocket";
 
 export const CurrencyExchange: React.FC = () => {
-  const socketUrl = "ws://stream.tradingeconomics.com/?client=guest:guest";
+  const socketUrl = "wss://stream.tradingeconomics.com/?client=guest:guest";
   const { sendJsonMessage, lastJsonMessage } = useWebSocket(socketUrl, {
     onOpen: () => sendJsonMessage({ topic: "subscribe", to: "EURUSD:CUR" }),
 
