@@ -58,7 +58,7 @@ export const CurrencyExchange: React.FC = () => {
             </Text>
           </Flex>
           <Flex alignItems="center" justifyContent="center">
-            <Text fontSize="0.8em">EUR/USD:</Text>
+            <Text fontSize="0.8em">EUR/USD Exchange: </Text>
             <Text fontWeight="bold" color="brand.700">
               {econData.exchange}
             </Text>

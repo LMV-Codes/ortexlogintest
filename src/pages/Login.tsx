@@ -5,6 +5,7 @@ import {
   FormLabel,
 } from "@chakra-ui/form-control";
 import { useDisclosure } from "@chakra-ui/hooks";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { Image } from "@chakra-ui/image";
 import { Input } from "@chakra-ui/input";
 import { Container, Flex } from "@chakra-ui/layout";
@@ -17,6 +18,7 @@ import ortexLogo from "../images/ortexL.png";
 
 export const Login: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const [showPassword, setshowPassword] = useState(false);
 
   const loginSchema = Yup.object().shape({
     email: Yup.string()
@@ -77,12 +79,29 @@ export const Login: React.FC = () => {
                       <FormLabel marginTop="2em" htmlFor="password">
                         Password
                       </FormLabel>
-                      <Input
-                        {...field}
-                        id="password"
-                        placeholder="Password"
-                        type="password"
-                      />
+                      <Flex alignItems="center">
+                        <Input
+                          {...field}
+                          id="password"
+                          placeholder="Password"
+                          type={showPassword ? "text" : "password"}
+                        />
+                        {showPassword ? (
+                          <ViewOffIcon
+                            fontSize="1.5em"
+                            marginLeft="0.5em"
+                            _hover={{ cursor: "pointer", color: "brand.400" }}
+                            onClick={() => setshowPassword(false)}
+                          />
+                        ) : (
+                          <ViewIcon
+                            fontSize="1.5em"
+                            marginLeft="0.5em"
+                            _hover={{ cursor: "pointer", color: "brand.400" }}
+                            onClick={() => setshowPassword(true)}
+                          />
+                        )}
+                      </Flex>
                       <FormErrorMessage>
                         {form.errors.password}
                       </FormErrorMessage>
