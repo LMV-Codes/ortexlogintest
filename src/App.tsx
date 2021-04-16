@@ -5,6 +5,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { Home } from "./pages/Home";
 import { Navbar } from "./components/navbar/Navbar";
 import { Login } from "./pages/Login";
+import { CurrencyExchange } from "./components/currencyExchange/CurrencyExchange";
 
 const theme = extendTheme({
   fonts: { body: "Source sans pro", heading: "Raleway" },
@@ -36,6 +37,7 @@ export const App = () => (
   <ChakraProvider theme={theme}>
     <Router>
       <Navbar />
+      <CurrencyExchange />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />

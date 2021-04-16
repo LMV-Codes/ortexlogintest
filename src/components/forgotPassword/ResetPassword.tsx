@@ -18,7 +18,7 @@ interface resetPassword {
 
 export const ResetPassword: React.FC<resetPassword> = ({ toggle }) => {
   const resetPasswordschema = Yup.object().shape({
-    email: Yup.string()
+    resetEmail: Yup.string()
       .min(5, "Email is too short")
       .max(100, "Email is too long")
       .email()
@@ -38,7 +38,7 @@ export const ResetPassword: React.FC<resetPassword> = ({ toggle }) => {
         zIndex="10"
       >
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ resetEmail: "" }}
           validationSchema={resetPasswordschema}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -69,7 +69,7 @@ export const ResetPassword: React.FC<resetPassword> = ({ toggle }) => {
                   reset password
                 </Heading>
                 <Text>Enter your email to get reset instructions</Text>
-                <Field name="email">
+                <Field name="resetEmail">
                   {({ field, form }: any) => (
                     <FormControl
                       isInvalid={form.errors.email && form.touched.email}
@@ -77,7 +77,7 @@ export const ResetPassword: React.FC<resetPassword> = ({ toggle }) => {
                       <FormLabel htmlFor="email" marginTop="2em">
                         Email
                       </FormLabel>
-                      <Input {...field} id="email" placeholder="Email" />
+                      <Input {...field} id="resetEmail" placeholder="Email" />
                       <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                     </FormControl>
                   )}
