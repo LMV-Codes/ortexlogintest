@@ -24,11 +24,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-use-websocket": "^2.5.0",
+    "serve": "^11.3.2",
     "typescript": "^3.9.5",
     "web-vitals": "^0.2.2",
     "yup": "^0.32.9"
   },
   "scripts": {
+    "netlify": "serve -s build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
